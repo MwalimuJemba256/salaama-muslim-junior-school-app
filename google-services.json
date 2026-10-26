@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "813734047854",
+    "project_id": "salaama-muslim-junior-school",
+    "storage_bucket": "salaama-muslim-junior-school.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:813734047854:android:514ea367113cc1c0a4367f",
+        "android_client_info": {
+          "package_name": "com.salaama.schoolapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD-UMx9oCVtIONLXBXnK3HoZinKk4tTRzk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
