@@ -15,26 +15,14 @@ jobs:
           flutter-version: '3.19.0'
           channel: 'stable'
 
-      - name: Create Android Folder Ourselves
-        run: |
-          flutter create . --platforms=android --org com.salaama.school --project-name salaama_school
-          # Commit android folder back to repo so next time it exists
-          git config user.name "MwalimuJemba"
-          git config user.email "jemba@github.com"
-          git add android/
-          git commit -m "Auto-create android folder" || echo "No changes"
-          git push || echo "Push failed"
+      - name: Create Android Folder if Missing
+        run: flutter create . --platforms=android --org com.salaama.school --project-name salaama_school
 
-      - name: Add google-services.json
-        run: |
-          echo '${{ secrets.GOOGLE_SERVICES_JSON }}' > android/app/google-services.json
+      - name: Install deps
+        run: flutter pub get
 
-      - name: Build
-        run: |
-          flutter pub get
-          dart pub global activate flutterfire_cli
-          flutterfire configure --project=salaama-muslim --platforms=android --yes
-          flutter build apk --release
+      - name: Build APK
+        run: flutter build apk --release
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
